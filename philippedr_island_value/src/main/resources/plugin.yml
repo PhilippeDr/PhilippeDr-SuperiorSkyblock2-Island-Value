@@ -1,0 +1,14 @@
+name: philippedr_island_value
+version: 1.0.0
+main: dev.philippedr.islandvalue.PhilippeDrIslandValuePlugin
+api-version: 1.21
+
+commands:
+  isvalue:
+    description: Base command for island value
+    usage: /isvalue info
+    permission: philippedr_island_value.use
+
+permissions:
+  philippedr_island_value.use:
+    default: true

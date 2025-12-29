@@ -1,0 +1,28 @@
+# Maven
+/target/
+*.log
+
+# IntelliJ IDEA
+/.idea/
+*.iml
+*.ipr
+*.iws
+/out/
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+
+# VS Code
+/.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local environment
+*.jar
+
+# Included for API reference only (not needed to build/run this plugin)
+/src/main/SuperiorSkyblock2-dev/
