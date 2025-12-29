@@ -121,21 +121,11 @@ public final class SuperiorSkyblock2IslandValueCheck {
         }
 
         lines.sort(
-                Comparator.comparing(BlockWorthLine::worthTotal, Comparator.reverseOrder())
-                        .thenComparing(BlockWorthLine::worthEach, Comparator.reverseOrder())
-                        .thenComparing(BlockWorthLine::key)
+            Comparator.comparing(BlockWorthLine::worthEach).reversed()
+                .thenComparing(BlockWorthLine::worthTotal, Comparator.reverseOrder())
         );
 
         lines = clampToWorthCap(lines, worthCap);
-        // Keep the displayed order highest -> lowest worth even after partial clamping.
-        if (lines.size() > 1) {
-            lines = new ArrayList<>(lines);
-            lines.sort(
-                    Comparator.comparing(BlockWorthLine::worthTotal, Comparator.reverseOrder())
-                            .thenComparing(BlockWorthLine::worthEach, Comparator.reverseOrder())
-                            .thenComparing(BlockWorthLine::key)
-            );
-        }
         if (limit > 0 && lines.size() > limit) {
             lines = lines.subList(0, limit);
         }

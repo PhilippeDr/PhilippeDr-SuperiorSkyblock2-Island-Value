@@ -69,10 +69,9 @@ public final class IsValueCommand implements CommandExecutor, TabCompleter {
                     sender.sendMessage(ChatColor.GRAY + "Top blocks:" );
                     int idx = 1;
                     for (BlockWorthLine line : topBlocks) {
-                        String star = (idx == 1) ? (ChatColor.YELLOW + "★ " + ChatColor.RESET) : "";
                         sender.sendMessage(
                                 ChatColor.DARK_GRAY + "  " + idx + ") " +
-                                        star + ChatColor.WHITE + line.key() +
+                                        ChatColor.WHITE + line.key() +
                                         ChatColor.GRAY + " x" + ChatColor.WHITE + line.amount() +
                                         ChatColor.GRAY + " @ " + ChatColor.WHITE + SuperiorSkyblock2IslandValueCheck.formatDecimal(line.worthEach()) +
                                         ChatColor.GRAY + " = " + ChatColor.GREEN + SuperiorSkyblock2IslandValueCheck.formatDecimal(line.worthTotal())

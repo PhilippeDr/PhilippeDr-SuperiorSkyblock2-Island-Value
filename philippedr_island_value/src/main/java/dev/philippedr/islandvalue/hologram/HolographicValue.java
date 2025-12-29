@@ -329,21 +329,11 @@ public final class HolographicValue implements Listener {
         }
 
         out.sort(
-            Comparator.comparing((BlockLine b) -> b.worthTotal, Comparator.reverseOrder())
-                .thenComparing((BlockLine b) -> b.worthEach, Comparator.reverseOrder())
-                .thenComparing((BlockLine b) -> b.key)
+            Comparator.comparing((BlockLine b) -> b.worthEach).reversed()
+                .thenComparing((BlockLine b) -> b.worthTotal, Comparator.reverseOrder())
         );
 
         out = clampToWorthCap(out, worthCap);
-        // Keep the displayed order highest -> lowest worth even after partial clamping.
-        if (out.size() > 1) {
-            out = new ArrayList<>(out);
-            out.sort(
-                Comparator.comparing((BlockLine b) -> b.worthTotal, Comparator.reverseOrder())
-                    .thenComparing((BlockLine b) -> b.worthEach, Comparator.reverseOrder())
-                    .thenComparing((BlockLine b) -> b.key)
-            );
-        }
         if (limit > 0 && out.size() > limit) return out.subList(0, limit);
         return out;
     }
