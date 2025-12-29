@@ -1,5 +1,8 @@
 # Maven
 /target/
+**/target/
+dependency-reduced-pom.xml
+*.class
 *.log
 
 # IntelliJ IDEA
@@ -23,6 +26,8 @@ Thumbs.db
 
 # Local environment
 *.jar
+*.war
+*.ear
 
 # Included for API reference only (not needed to build/run this plugin)
 /src/main/SuperiorSkyblock2-dev/
